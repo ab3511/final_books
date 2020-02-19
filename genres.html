@@ -1,7 +1,18 @@
-"best-sellers-navigation"
-"combined-print-and-e-book-fiction"
-"combined-print-and-e-book-nonfiction"
-"hardcover-nonfiction"
-"paperback-nonfiction"
-"picture-books"
-"young-adult-hardcover"
+# Get all the available New York Times best sellers lists
+lists = nyt.best_sellers_lists()
+
+# Get fiction best sellers list
+books = nyt.best_sellers_list()
+
+# Get non-fiction best sellers list
+books = nyt.best_sellers_list(
+    name = "combined-print-and-e-book-nonfiction"
+)
+
+# Get best sellers lists from other date
+import datetime
+
+books = nyt.best_sellers_list(
+    name = "combined-print-and-e-book-nonfiction",
+    date = datetime.datetime(2019, 1, 1)
+)
